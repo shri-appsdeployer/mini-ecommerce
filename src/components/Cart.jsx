@@ -1,11 +1,16 @@
 import React from 'react'
 import { useSelector ,useDispatch} from 'react-redux'
-import { remove } from '../store/cartSlice'
+import { getState, remove } from '../store/cartSlice'
+import { getCart } from '../store/cartSlice'
 
 
 const Cart = () => {
     const dispatch = useDispatch();
-    const cartItems = useSelector((state) => state.cart)
+    const cartItems = useSelector(getCart)
+    const state = useSelector(getState)
+    console.log(state.cart.cart)
+
+
 
     const handleRemove=(id)=>{
         console.log(id)

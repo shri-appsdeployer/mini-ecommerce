@@ -1,9 +1,10 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux'
+import { getCart } from '../store/cartSlice'
 
 const NavBar = () => {
-  const cartItems = useSelector((state) => state.cart)
+  const cartItems = useSelector((state)=> state.cart.cart)
   return (
     <>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
